@@ -1,0 +1,32 @@
+:root {
+    /*  색상  */
+    --c-green-text: #00ff00;
+    --c-green-text-glow: #00ff00aa;
+    --c-white-text: #ffffff;
+    --c-white-text-glow: #ffffffaa;
+    --c-black-bg: #000000;
+
+    /*  RGB 글리치 효과용 색상  */
+    --c-red-shift: #ff0000;
+    --c-blue-shift: #0000ff;
+
+    /*  글씨 관련  */
+    --font-family-mono: 'NeoDunggeunmoPro-Regular', monospace;
+    --font-size-base: 23px;
+
+    /*  레이아웃  */
+    --padding-base: 35px;
+    --padding-horizontal: 60px;
+
+    /*  CRT 효과 값들  */
+    --crt-curvature-x: 1deg;
+    --crt-curvature-y: 0.5deg;
+    --crt-scale: 0.99;
+    --crt-perspective: 1000px;
+    --crt-border-radius: 15px;
+
+    /*  애니메이션 관련  */
+    --animation-flicker: 0.15s;
+    --animation-glitch: 0.1s;
+    --animation-transition: 0.3s;
+}

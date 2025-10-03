@@ -1,58 +1,45 @@
-html,body {
-    margin: 0;
-    padding: 35px;
-    padding-left: 60px;
-    padding-right: 60px;
+/*  기본 스타일 모음  */
 
+/*  폰트 정의  */
+@font-face {
+    font-family: 'NeoDunggeunmoPro-Regular';
+    src: url('./NeoDunggeunmoPro-Regular.woff') format('woff');
+}
+
+#mainContainer {
+    position: absolute;
+    top: var(--padding-base);
+    left: var(--padding-horizontal);
+    right: var(--padding-horizontal);
+    bottom: var(--padding-base);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+html, body {
+    margin: 0;
     height: 100%;
 
-    --c-green-text: #00ff00;
-    --c-green-text-glow: #00ff00aa;
-    --c-white-text: #ffffff;
-    --c-white-text-glow: #ffffffaa;
-    --c-black-bg: #000000;
+    padding: var(--padding-base);
+    padding-left: var(--padding-horizontal);
+    padding-right: var(--padding-horizontal);
 
     background: var(--c-black-bg);
     color: var(--c-green-text);
-}
-
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3) 1px, transparent 1px, transparent 2px);
-    pointer-events: none;
-    z-index: 1;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
-    box-shadow: inset 0 0 200px rgba(0,0,0,0.8);
-    pointer-events: none;
-    z-index: 2;
-}
-
-@font-face {
-    font-family: 'NeoDunggeunmoPro-Regular';
-    src: url('../NeoDunggeunmoPro-Regular.woff') format('woff');
+    
+    /*  텍스트 RGB 글리치 효과  */
+    text-shadow: 
+        0 0 5px var(--c-green-text-glow),
+        -1px 0 0 var(--c-red-shift),
+        1px 0 0 var(--c-blue-shift);
 }
 
 * {
     box-sizing: border-box;
-    font-size: 23px;
-    font-family: 'NeoDunggeunmoPro-Regular';
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-mono);
 }
 
-/*  텍스트 선택 시 스타일  */
 ::selection {
     background-color: var(--c-green-text);
     color: var(--c-black-bg);
@@ -61,16 +48,4 @@ body::before {
 ::-moz-selection {
     background-color: var(--c-green-text);
     color: var(--c-black-bg);
-}
-
-/*  화면 깜빡임 효과  */
-@keyframes screen-flicker {
-    0% { opacity: 1; }
-    30% { opacity: 0.85; }
-    70% { opacity: 0.9; }
-    100% { opacity: 1; }
-}
-
-.screen-flicker {
-    animation: screen-flicker 0.15s ease-in-out;
 }

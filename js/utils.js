@@ -1,10 +1,10 @@
 export async function createSHA256(message, key) {
-    // 키와 메시지를 Uint8Array로 변환
+
+    // 키, 메시지 -> Uint8Array로 변환
     const encoder = new TextEncoder();
     const keyData = encoder.encode(key);
     const messageData = encoder.encode(message);
-    
-    // CryptoKey 객체 생성
+
     const cryptoKey = await crypto.subtle.importKey(
         'raw',
         keyData,
@@ -12,12 +12,11 @@ export async function createSHA256(message, key) {
         false,
         ['sign']
     );
+
+    const sig = await crypto.subtle.sign('HMAC', cryptoKey, messageData);
     
-    // HMAC 서명 생성
-    const signature = await crypto.subtle.sign('HMAC', cryptoKey, messageData);
-    
-    // ArrayBuffer를 16진수 문자열로 변환
-    const hashArray = Array.from(new Uint8Array(signature));
+    // array buffer를 16진수 문자열로 변환
+    const hashArray = Array.from(new Uint8Array(sig));
     const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     
     return hashHex;

@@ -9,8 +9,11 @@
 #cmdInput {
     position: relative;
     max-width: 100%;
-    
-    text-shadow: 0 0 5px var(--c-green-text-glow);
+
+    text-shadow:
+        0 0 5px var(--c-green-text-glow),
+        -1px 0 0 var(--c-red-shift),
+        1px 0 0 var(--c-blue-shift);
     outline: none;
     border: 0;
     background: transparent;
@@ -27,11 +30,17 @@
 #cursor {
     position: relative;
     top: 15px;
-    
+
     pointer-events: none;
     background: var(--c-green-text);
     height: 5px;
     width: 17px;
+
+    /*  커서에도 미세한 빛 효과  */
+    box-shadow:
+        0 0 3px var(--c-green-text-glow),
+        -0.5px 0 0 var(--c-red-shift),
+        0.5px 0 0 var(--c-blue-shift);
 }
 
 [contenteditable] {

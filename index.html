@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>오래된 모니터</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="./css/index.css" />
-        <link rel="stylesheet" href="./css/input.css" />
 
-        <!-- 성수러운 그녀는 내 프로그램 중 1.5.2 버전이 가장 좋다고 했어. 2025년에 있었던 일이었지. -->
-        <script type="module" src="./js/utils.js"></script>
-        <script type="module" src="./js/elements.js"></script>
+<head>
+    <title>오래된 모니터</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script type="module" src="./js/output.js"></script>
-        <script type="module" src="./js/command.js"></script>
-        <script type="module" src="./js/cursor.js"></script>
-        <script type="module" src="./js/index.js"></script>
-    </head>
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/crt-effects.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/input.css" />
 
-    <body>
-        <div id="output">
+    <!-- 성수러운 그녀는 내 프로그램 중 1.5.2 버전이 가장 좋다고 했어. 2025년에 있었던 일이었지. -->
+    <script type="module" src="./js/utils.js"></script>
+    <script type="module" src="./js/elements.js"></script>
 
-        </div>
+    <script type="module" src="./js/output.js"></script>
+    <script type="module" src="./js/command.js"></script>
+    <script type="module" src="./js/cursor.js"></script>
+    <script type="module" src="./js/index.js"></script>
+</head>
+
+<body>
+    <!-- 배경색 전용 컨테이너 (border-radius 적용을 위해) -->
+    <div id="background-container"></div>
+
+    <div id="mainContainer">
+        <div id="output"></div>
 
         <div id="commandInputContainer">
             <div id="commandInputHitbox" class="command-input-hitbox"></div>
@@ -28,5 +35,7 @@
             <div contenteditable="true" id="cmdInput" spellcheck="false" autocapitalize="none"></div>
             <div id="cursor"></div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

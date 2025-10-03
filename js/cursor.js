@@ -82,7 +82,7 @@ window.addEventListener('click', () => {
     }
 });
 
-// 입력하고 있으면 커서 잠시 숨기기
+// 입력하고 있으면 커서 숨기기
 if (cmdInputElement) {
     cmdInputElement.addEventListener('input', () => {
         stopCursorBlink();

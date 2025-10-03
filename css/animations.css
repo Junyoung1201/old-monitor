@@ -1,0 +1,63 @@
+/*  애니메이션 모음  */
+
+/*  화면 깜빡임 애니메이션  */
+@keyframes screen-flicker {
+    0% {
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+
+    30% {
+        opacity: 0.85;
+        filter: hue-rotate(2deg);
+    }
+
+    70% {
+        opacity: 0.9;
+        filter: hue-rotate(-1deg);
+    }
+
+    100% {
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+}
+
+.screen-flicker {
+    animation: screen-flicker var(--animation-flicker) ease-in-out;
+}
+
+/*  RGB 글리치 애니메이션  */
+@keyframes chromatic-aberration {
+    0% {
+        text-shadow:
+            0 0 5px var(--c-green-text-glow),
+            -1px 0 0 var(--c-red-shift),
+            1px 0 0 var(--c-blue-shift);
+    }
+
+    25% {
+        text-shadow:
+            0 0 5px var(--c-green-text-glow),
+            -2px 0 0 var(--c-red-shift),
+            2px 0 0 var(--c-blue-shift);
+    }
+
+    75% {
+        text-shadow:
+            0 0 5px var(--c-green-text-glow),
+            -1.5px 0 0 var(--c-red-shift),
+            1.5px 0 0 var(--c-blue-shift);
+    }
+
+    100% {
+        text-shadow:
+            0 0 5px var(--c-green-text-glow),
+            -1px 0 0 var(--c-red-shift),
+            1px 0 0 var(--c-blue-shift);
+    }
+}
+
+.chromatic-glitch {
+    animation: chromatic-aberration var(--animation-glitch) ease-in-out;
+}

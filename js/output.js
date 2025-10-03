@@ -1,8 +1,25 @@
+// 스크롤을 가장 아래로 이동시키는 공통 함수
+function scrollToBottom() {
+
+    const mainContainer = document.getElementById('mainContainer');
+
+    if (mainContainer) {
+
+        // DOM 업데이트 후 스크롤 조정
+        requestAnimationFrame(() => {
+            mainContainer.scrollTop = mainContainer.scrollHeight;
+        });
+
+    }
+    
+}
+
 export function writeLine(text, options = {}) {
     const outputElement = document.getElementById("output");
     const { bgColor, foreColor } = options;
     
     let styledText = text;
+
     if (bgColor || foreColor) {
         const styles = [];
         if (bgColor) styles.push(`background-color: ${bgColor}`);
@@ -11,7 +28,7 @@ export function writeLine(text, options = {}) {
     }
     
     outputElement.innerHTML += styledText + '<br/>';
-    outputElement.scrollTop = outputElement.scrollHeight;
+    scrollToBottom();
 }
 
 export function write(text, options = {}) {
@@ -19,6 +36,7 @@ export function write(text, options = {}) {
     const { bgColor, foreColor } = options;
     
     let styledText = text;
+
     if (bgColor || foreColor) {
         const styles = [];
         if (bgColor) styles.push(`background-color: ${bgColor}`);
@@ -27,7 +45,7 @@ export function write(text, options = {}) {
     }
     
     outputElement.innerHTML += styledText;
-    outputElement.scrollTop = outputElement.scrollHeight;
+    scrollToBottom();
 }
 
 export function appendOutput(text, options = {}) {
